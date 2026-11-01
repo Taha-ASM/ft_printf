@@ -6,7 +6,7 @@
 /*   By: tait-si <tait-si@student.1337.ma>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/31 19:15:25 by tait-si           #+#    #+#             */
-/*   Updated: 2026/10/31 20:22:01 by tait-si          ###   ########.fr       */
+/*   Updated: 2026/11/01 21:11:18 by tait-si          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,17 +19,17 @@ int	is_equal(char c, va_list list)
 	count = 0;
 	if (c == 'c')
 		count += ft_putchar(va_arg(list, int));
-	if (c == 's')
+	else if (c == 's')
 		count += ft_putstr(va_arg(list, char *));
-	if (c == 'p')
+	else if (c == 'p')
 		count += ft_puthex(va_arg(list, void *));
-	if (c == 'd' || c == 'i')
+	else if (c == 'd' || c == 'i')
 		count += ft_putnbr(va_arg(list, int));
-	if (c == 'u')
+	else if (c == 'u')
 		count += ft_unsigned(va_arg(list, unsigned int));
-	if (c == 'x' || c == 'X')
+	else if (c == 'x' || c == 'X')
 		count += ft_hex(va_arg(list, unsigned int), c);
-	if (c == '%')
+	else if (c == '%')
 		count += write(1, "%", 1);
 	return (count);
 }
